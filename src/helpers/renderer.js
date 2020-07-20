@@ -27,6 +27,7 @@ export default (req, data) => {
                 <meta name="theme-color" content="#db5945" />
                 <meta name="HandheldFriendly" content="true" />
                 <link rel="apple-touch-icon" href="icon.png" />
+                <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
             </head>
             <body>
                 <div id="root">${content}</div>
