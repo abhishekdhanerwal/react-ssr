@@ -11,6 +11,10 @@ app.use(express.static('public'));
 
 app.use(compression());
 
+app.get("/sw.js", (req, res) => {
+    res.sendFile("/sw.js");
+});
+
 app.get('/:id', (req, res) => {
 
     const promises =  matchRoutes(Routes, req.path).map(({route}) => {
