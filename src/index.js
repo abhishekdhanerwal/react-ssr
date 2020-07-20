@@ -5,6 +5,8 @@ import Routes from './client/Routes';
 import compression from 'compression';
 const app = express();
 
+const port = process.env.port || 3000;
+
 app.use(express.static('public'));
 
 app.use(compression());
@@ -21,6 +23,6 @@ app.get('/:id', (req, res) => {
 
 app.use((req, res) => {res.send('Page not Found')});
 
-app.listen(3000, () => {
-    console.log('App listening on port 3000');
+app.listen(port, () => {
+    console.log(`App listening on port ${port}`);
 });
