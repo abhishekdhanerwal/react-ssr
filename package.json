@@ -46,12 +46,12 @@
     "webpack": "^4.43.0",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.0.9",
-    "webpack-node-externals": "^2.5.0"
-  },
-  "devDependencies": {
+    "webpack-node-externals": "^2.5.0",
     "eslint": "^7.5.0",
     "eslint-plugin-react": "^7.20.3",
     "webpack-cli": "^3.3.12"
+  },
+  "devDependencies": {
   },
   "engines": {
     "node": "12.x"
