@@ -1,0 +1,1 @@
+export const BaseUrl = "http://hn.algolia.com/api/v1/search?page=";
