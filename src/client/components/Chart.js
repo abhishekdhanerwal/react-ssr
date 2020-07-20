@@ -2,6 +2,8 @@ import React from 'react';
 import { VictoryChart, VictoryLine, VictoryTheme, VictoryAxis, VictoryLabel } from "victory";
 import PropTypes from 'prop-types';
 
+/* @Component: it returns line chart  */
+
 function Chart(props) {
     return (
         <VictoryChart theme={VictoryTheme.material} height={200}

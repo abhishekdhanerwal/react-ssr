@@ -4,6 +4,8 @@ import moment from "moment";
 import Header from './Header';
 import Button from './Button';
 
+/* @Component: it returns data present in a row  */
+
 function Rows(props) {
 
     if(props.isHeading){

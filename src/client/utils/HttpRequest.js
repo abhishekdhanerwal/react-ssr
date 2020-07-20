@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import { BaseUrl } from './Configure';
 
+/* Function For all http requests */
 const httpRequest = (pageNumber) => {
        return Axios.get(`${BaseUrl}${pageNumber}`)
         .then(response => {

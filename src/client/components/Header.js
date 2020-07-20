@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/* @Component: it returns all informative and heading atoms  */
 function Header(props){
     return (
         <div className={`col s${props.grid} m${props.grid} l${props.grid} xl${props.grid}`}>

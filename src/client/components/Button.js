@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/* @Component: it returns all clickable atoms  */
 function Button(props) {
 
     return (
