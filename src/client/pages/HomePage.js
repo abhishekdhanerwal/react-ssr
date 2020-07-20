@@ -11,6 +11,7 @@ function Home(props) {
     const [dataList, setDataList] = useState([]);
     const [currentPage, setCurrentPage] = useState();
     const [graphData, setGraphData] = useState({});
+    const [isError, setIsError] = useState(false);
 
     const checkSetData = (data, isOnInit) => {
         let tempGraphData = [];
@@ -33,18 +34,25 @@ function Home(props) {
     }
 
     useEffect(() => {
+        setIsError(false);
         if (!dataList.length) {
             setTimeout(() => {
-                if (window.__ROUTE_DATA__) {
-                    checkSetData(window.__ROUTE_DATA__, true);
-                    delete window.__ROUTE_DATA__;
+                if (window.__ROUTE_DATA__ && window.__ROUTE_DATA__.hits) {
+                        checkSetData(window.__ROUTE_DATA__, true);
+                        delete window.__ROUTE_DATA__;
+                } else {
+                    setIsError(true);
                 }
             }, 0);
         } else {
             HttpRequest(currentPage).then((response) => {
-                checkSetData(response);
-            }).catch((err) => {
-                console.log(err);
+                if(response.hits.length){
+                    checkSetData(response);
+                } else {
+                    setIsError(true);
+                }
+            }).catch(() => {
+                setIsError(true);
             })
         }
     }, [currentPage]);
@@ -97,6 +105,7 @@ function Home(props) {
                     ]} />
                 </nav>
             </header>
+            {!isError ? 
             <main id="#main-content">
                 <section id="#data-list">
                     {dataList.map((elem, index) => {
@@ -114,6 +123,11 @@ function Home(props) {
                     </div>
                 </article>
             </main>
+            :
+            <main id="#error-msg">
+                No Data Available
+            </main>
+            }
             <footer style={{ marginBottom: '15px' }}>
                 {Object.entries(graphData).length ?
                     <Chart graphData={graphData} />
