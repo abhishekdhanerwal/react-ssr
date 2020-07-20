@@ -9,12 +9,15 @@
     "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
     "dev:build-server": "webpack --config webpack.server.js --watch",
     "dev:build-client": "webpack --config webpack.client.js --watch",
-    "prod": "npm run lint && npm run prod:build-server && npm run prod:build-client && npm run prod:server",
+    "start": "npm run lint && npm run prod:build-server && npm run prod:build-client && npm run prod:server",
     "prod:server": "node build/bundle.js",
     "prod:build-server": "webpack --config webpack.serverProd.js",
     "prod:build-client": "webpack --config webpack.clientProd.js"
   },
   "author": "",
+  "keywords": [
+    "heroku"
+  ],
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
@@ -49,5 +52,8 @@
     "eslint": "^7.5.0",
     "eslint-plugin-react": "^7.20.3",
     "webpack-cli": "^3.3.12"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }

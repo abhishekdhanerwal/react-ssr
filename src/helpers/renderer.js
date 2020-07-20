@@ -15,11 +15,14 @@ export default (req, data) => {
     const helmet = Helmet.renderStatic();
 
     return `
-        <html>
+        <!DOCTYPE html>
+        <html lang="en">
             <head>
                 ${helmet.title.toString()}
                 ${helmet.meta.toString()}
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+                <meta name="viewport" content="width=device-width, minimum-scale=1.0, user-scalable=yes">
+                <meta name="Description" content="List and Graph">
             </head>
             <body>
                 <div id="root">${content}</div>

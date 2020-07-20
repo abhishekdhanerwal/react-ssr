@@ -79,6 +79,7 @@ function Home(props) {
                 <title>{`List: Page-${currentPage ? currentPage : 0}`}</title>
                 <meta property="og:title" content={`List: Page-${currentPage ? currentPage :  0}`} />
                 <meta property="og:type" content="list" />
+                <meta property="og:description" content={`List: Page-${currentPage ? currentPage :  0}`} ></meta>
             </Helmet>
         )
     }
