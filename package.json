@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
     "lint": "node_modules/.bin/eslint webpack.* src",
     "dev": "npm run lint && npm-run-all --parallel dev:*",
     "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
     "dev:build-server": "webpack --config webpack.server.js --watch",
     "dev:build-client": "webpack --config webpack.client.js --watch",
-    "start": "npm run lint && npm run prod:build-server && npm run prod:build-client && npm run prod:server",
+    "start": "npm run prod:server",
+    "prod": "npm run lint && npm run prod:build-server && npm run prod:build-client && npm run prod:server",
     "prod:server": "node build/bundle.js",
     "prod:build-server": "webpack --config webpack.serverProd.js",
     "prod:build-client": "webpack --config webpack.clientProd.js"
@@ -50,7 +53,11 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.0.9",
-    "webpack-node-externals": "^2.5.0"
+    "webpack-node-externals": "^2.5.0",
+    "enzyme": "^2.9.1",
+    "jest": "^21.2.1",
+    "jest-cli": "^21.2.1",
+    "babel-jest": "22.4.3"
   },
   "devDependencies": {},
   "engines": {
