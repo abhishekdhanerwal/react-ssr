@@ -2,10 +2,12 @@ import express from 'express';
 import renderer from './helpers/renderer';
 import { matchRoutes } from 'react-router-config';
 import Routes from './client/Routes';
-
+import compression from 'compression';
 const app = express();
 
 app.use(express.static('public'));
+
+app.use(compression());
 
 app.get('/:id', (req, res) => {
 
