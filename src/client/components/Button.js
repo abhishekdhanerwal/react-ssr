@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function Button(props) {
 
     return (
-        <a style={{ cursor: 'pointer' }} role="button" onClick={() => props.handlePageChange(props.flag, props.toggle)}>{props.label}</a>
+        <a style={{ cursor: 'pointer' }} href="javascript:;" role="button" onClick={() => props.handlePageChange(props.flag, props.toggle)}>{props.label}</a>
     );
 }
 

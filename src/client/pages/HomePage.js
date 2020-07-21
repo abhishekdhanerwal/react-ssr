@@ -75,10 +75,17 @@ function Home(props) {
             tempDataList.splice(tempDataList.findIndex((element) => element.objectID === data.objectID), 1);
         } else {
             row = tempDataList.find((element) => element.objectID === data.objectID);
-            row.num_comments++;
+            row.points++;
         }
-        localStorage.setItem(data.objectID, isHide ? 'hide' : row.num_comments);
+        localStorage.setItem(data.objectID, isHide ? 'hide' : row.points);
         setDataList(tempDataList);
+        let tempGraphData = [];
+
+        tempDataList.forEach((elem) => {
+            tempGraphData.push({ x: elem.objectID, y: elem.points });
+        });
+        setGraphData(tempGraphData);
+
     };
 
     const head = () => {
@@ -98,7 +105,7 @@ function Home(props) {
             <header className="row">
                 <nav id="#heading-nav">
                     <Row isHeading data={[
-                        { label: "Comments", grid: "1" },
+                        { label: "Commen", grid: "1" },
                         { label: "Vote Counts", grid: "1" },
                         { label: "UpVote", grid: "1" },
                         { label: "News Details", grid: "9" }
