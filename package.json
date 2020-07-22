@@ -1,7 +1,7 @@
 {
   "name": "new",
   "version": "1.0.0",
-  "description": "",
+  "description": "ssr app",
   "main": "index.js",
   "scripts": {
     "test": "jest",
