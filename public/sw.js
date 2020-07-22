@@ -1,5 +1,5 @@
 const CACHE_NAME = 'cache-token';
-const urlsToCache = ['/0', '/bundle.js' ];
+const urlsToCache = ['/0'];
 
 self.addEventListener('install', event => {
     event.waitUntil(
