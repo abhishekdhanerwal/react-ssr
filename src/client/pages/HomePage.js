@@ -88,7 +88,7 @@ function Home(props) {
 
     };
 
-    const head = (props) => {
+    const head = () => {
         return (
             <Helmet>
                 <title>{`List: Page-${currentPage ? currentPage : 0}`}</title>
