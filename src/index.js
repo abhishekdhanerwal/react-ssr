@@ -17,9 +17,9 @@ app.get('/', (req, res) => {
 });
 
 /* To register service worker */
-// app.get("/sw.js", (req, res) => {
-//     res.sendFile("/sw.js");
-// });
+app.get("/sw.js", (req, res) => {
+    res.sendFile("/sw.js");
+});
 
 /* For all the application requests */
 app.get('/:id', (req, res) => {

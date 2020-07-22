@@ -105,7 +105,7 @@ function Home(props) {
             <header className="row">
                 <nav id="#heading-nav">
                     <Row isHeading data={[
-                        { label: "Comm", grid: "1" },
+                        { label: "Comments", grid: "1" },
                         { label: "Vote Counts", grid: "1" },
                         { label: "UpVote", grid: "1" },
                         { label: "News Details", grid: "9" }
