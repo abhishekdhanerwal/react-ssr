@@ -4,7 +4,10 @@ import moment from "moment";
 import Header from './Header';
 import Button from './Button';
 
-/* @Component: it returns data present in a row  */
+/**
+ * @Component: it returns data present in a row  
+ * @param {boolean} isHeading - determines if it is a heading row or data row
+*/
 
 function Rows(props) {
 

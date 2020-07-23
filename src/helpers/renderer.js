@@ -12,7 +12,9 @@ export default (req, data) => {
         </StaticRouter>
     ); 
 
-    /* SEO get info defined in  react containers */
+    /**
+     * SEO get info defined in  react containers 
+    */
     const helmet = Helmet.renderStatic();
 
     return `

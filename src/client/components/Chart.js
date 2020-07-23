@@ -2,7 +2,10 @@ import React from 'react';
 import { VictoryChart, VictoryLine, VictoryTheme, VictoryAxis, VictoryLabel } from "victory";
 import PropTypes from 'prop-types';
 
-/* @Component: it returns line chart  */
+/** 
+ * @Component: it returns line chart  
+ * @param {object} graphData - containes x axis and y axis values
+*/
 
 function Chart(props) {
     return (

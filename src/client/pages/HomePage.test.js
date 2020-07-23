@@ -1,10 +1,21 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
+import EnzymeAdapter from 'enzyme-adapter-react-16';
 import HomePage from './HomePage';
 
-describe("HomePage", () => {
-  it("should render my component", () => {
-    const wrapper = shallow(<HomePage />);
-    return wrapper;
-  });
+Enzyme.configure({adapter: new EnzymeAdapter()});
+
+const setup = (props={}) => {
+  return shallow(<HomePage {...props} />);
+};
+
+const findByTestAttr = (wrapper, val) => {
+  return wrapper.find(val);
+};
+
+
+test('render home page', () => {
+    const wrapper = setup();
+    const homeContainer = findByTestAttr(wrapper, "header.row");
+    expect(homeContainer.length).toBe(1);
 });

@@ -11,17 +11,23 @@ app.use(express.static('public'));
 
 app.use(compression());
 
-/* Redirects the initial request */
+/**  
+ * Redirects the initial request
+*/
 app.get('/', (req, res) => {
     res.redirect(307, '/0');
 });
 
-/* To register service worker */
+/**
+ * To register service worker 
+*/
 app.get("/sw.js", (req, res) => {
     res.sendFile("/sw.js");
 });
 
-/* For all the application requests */
+/**
+ * For all the application 
+*/
 app.get('/:id', (req, res) => {
 
     const promises =  matchRoutes(Routes, req.path).map(({route}) => {
@@ -32,7 +38,9 @@ app.get('/:id', (req, res) => {
     });
 });
 
-/* For no page found middleware */
+/** 
+ * For no page found middleware 
+*/
 app.use((req, res) => {res.send('Page not Found')});
 
 app.listen(port, () => {
